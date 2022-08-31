@@ -28,10 +28,17 @@
     */
 
     // collect input
+let base = prompt("Enter base:");
+let length = prompt("Enter length:");
+
 
     // perform calculations
+let area = (base * length) / 2;
+
 
     // display output
+console.log(`base: ${base}, length: ${length}`);
+document.getElementById('output').innerHTML = `The area of the pizza slice is ${area}`;
 
 </script>
 </body>
