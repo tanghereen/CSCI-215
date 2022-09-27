@@ -48,9 +48,39 @@
             3. Output: display the sorted array values in the UI in the expected div.
     */
 
+// input in prompt: Lion,Tiger,Leopard,Snow Leopard,Clouded Leopard,Jaguar,Lynx
+
     // input
 
+    let catNames = prompt("Enter big cat names:");
+    console.log(catNames);
+    document.getElementById('names').innerHTML = catNames;
+
     // compute
+    // convert string to array
+
+    const catNamesArray = catNames.split(",");
+    console.log(catNamesArray);
+
+    // build list of names to display
+
+    for (let i = 0; i < catNamesArray.length; i++) {
+       let stringOutput = `${i} - ${catNamesArray[i]}<br>`;
+       document.getElementById('listOfNames').innerHTML += stringOutput;
+    }
+
+
+    // * BONUS **
+
+    // sort array
+    catNamesArray.sort();
+
+    // build list of sorted names to display
+
+    for (let i = 0; i < catNamesSortedArray.length ; i++ ) {
+        let stringOutput = `${i} - ${catNamesSortedArray[i]} <br/>`;
+        document.getElementById('listOfNamesSorted').innerHTML += stringOutput;
+    }
 
     // output into elements in the UI
 

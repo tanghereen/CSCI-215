@@ -30,12 +30,19 @@
     */
 
     // define constants
+const CONVERSION_FACTOR = 1.60934;
 
     // collect input
+let mi = prompt("Enter some number of miles:");
 
     // perform calculations
+let km = mi * CONVERSION_FACTOR;
 
     // display output
+document.getElementById('mi').innerHTML = miles;
+document.getElementById('km').innerHTML = km;
+
+
 
 </script>
 </body>
