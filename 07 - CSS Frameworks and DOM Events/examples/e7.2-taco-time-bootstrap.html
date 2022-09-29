@@ -126,6 +126,8 @@
     const TACO_PRICE = 1.19;
     const BURRITO_PRICE = 2.49;
     const TAX = .065;
+
+
     let tacoCount = 0;
     let tacoTotal = 0;
     let burritoCount = 0;
@@ -140,12 +142,12 @@
     function initPage() {
         // style the menu board
         document.getElementById('menuBoard').style.backgroundColor = '#456D6A';
-        document.getElementById('menuBoard').style.color = '#fff';
+        document.getElementById('menuBoard').style.color = '#ffffff';
         document.getElementById('menuBoard').style.borderWidth = '20px';
         document.getElementById('menuBoard').style.borderColor = '#B6977D';
         // set prices based on constant values
-        document.getElementById('tacoCost').innerHTML = String(TACO_PRICE);
-        document.getElementById('burritoCost').innerHTML = String(BURRITO_PRICE);
+        document.getElementById('tacoCost').innerHTML = TACO_PRICE;
+        document.getElementById('burritoCost').innerHTML = BURRITO_PRICE;
         // init totals
         calcTacoTotal();
         calcBurritoTotal();

@@ -20,14 +20,14 @@
             <div class="card mt-5" style="background-color: #efefef;">
                 <div class="card-body">
                     <h5 class="card-title">Miles to Kilometers</h5>
-                    <p class="card-text">Enter the number of miles to convert to kilometers.</p>
-                    <!-- input field with button -->
-                    <div class="input-group mt-3">
-                        <input type="text" class="form-control" id="miles" placeholder="Enter miles to convert to kilometers" aria-label="Enter miles" aria-describedby="button-addon2">
-                        <button class="btn btn-primary" type="button" onclick="convertMilesToKilometers()" id="button-addon2">Convert</button>
-                    </div>
-                    <!-- display result -->
-                    <div class="text-center my-5" style="font-size: 80px;">
+    <p class="card-text">Enter the number of miles to convert to kilometers.</p>
+<!-- input field with button -->
+    <div class="input-group mt-3">
+<input type="text" class="form-control" id="miles" placeholder="Enter miles to convert to kilometers" aria-label="Enter miles" aria-describedby="button-addon2">
+    <button class="btn btn-primary" type="button" onclick="convertMilesToKilometers()" id="button-addon2">Convert</button>
+        </div>
+    <!-- display result -->
+            <div class="text-center my-5" style="font-size: 80px;">
                         <span id="kilometers"></span> km
                     </div>
                 </div>
@@ -38,16 +38,24 @@
     </div>
 </div>
 <script>
-    const CONVERSION_FACTOR = 1.60934;
 
-    /**
-     * function receives the event, performs the calculation and displays the result
-     */
+/**
+ * function receives the event, performs the calculation and displays the result
+ * write a function that converts mi to km and update the webpage.
+ * 1. create function
+ * 2. miles entered by user in input field
+ * 3. function to convert miles to km
+ * 4. update output in DOM
+*/
+
+
+    const CONVERSION_FACTOR = 1.60934;
     function convertMilesToKilometers() {
         let miles = document.getElementById('miles').value;
         let kilometers = miles * CONVERSION_FACTOR;
         document.getElementById('kilometers').innerHTML = kilometers.toFixed(1);
     }
+
 
 </script>
 </body>
