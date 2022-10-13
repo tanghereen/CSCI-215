@@ -21,7 +21,7 @@
 <html>
 <head>
 </head>
-<body onload="init()">
+<body onload="init(tipCalculatorModel)">
 <h1>Online Order</h1>
 <div id="results"></div>
 <script type="text/javascript">
@@ -42,14 +42,14 @@
         tipCalculatorModel.tipAmount = amount * tipPercent;
         tipCalculatorModel.grandTotal = amount + tipAmount;
     
-        let customerOutput() = `
+        let customerOutput = `
             Amount: ${tipCalculatorModel.amount}<br>
             Tip Percent: ${tipCalculatorModel.tipPercent}<br>
             Tip Amount: ${tipCalculatorModel.tipAmount}<br>
             Total: ${tipCalculatorModel.grandTotal}<br>
         `;
 
-document.getElementById('results').innerHTML = customerOutput();
+document.getElementById('results').innerHTML = customerOutput;
 
 </script>
 </body>
