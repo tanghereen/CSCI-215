@@ -1,0 +1,73 @@
+#calculate
+
+#amount
+
+#services
+
+.tip
+
+#total
+
+<input type="text" id="amount"
+				placeholder="Amount to be paid"> $
+
+/* function myFunction() {
+  var obj = document.getElementById("myFunction");
+}
+
+function getOption() {
+  var obj = document.getElementById("services");
+}
+
+
+var total = parseFloat(document.getElementById("total").value);
+var tip = parseFloat(document.getElementById("percentage").value) * 0.01;
+  
+var totalTip = amount * tip;
+var totalBill = amount + totalTip;
+
+
+
+if (isNaN(total) || total === "") { //for total
+document.getElementById("total").innerHTML = "Please input bill amount";
+} else {
+document.getElementById("calc").innerHTML = "Total Bill Amount" + "<br> $" + parseFloat(totalBill).toFixed(2);
+}
+if (isNaN(tip) || tip === "") { //for tip
+document.getElementById("party").innerHTML = "You forgot the tip";
+} else {
+document.getElementById("percentage").innerHTML = "Total Tip" + "<br> $" + parseFloat(totalTip).toFixed(2);
+}
+
+function convertMilesToKilometers() {
+        let miles = document.getElementById('miles').value;
+        let kilometers = miles * CONVERSION_FACTOR;
+        document.getElementById('kilometers').innerHTML = kilometers.toFixed(1);
+    }
+     function calculate() {
+    for (i=0;i<=15;i++) {
+        let calc = +document.getElementById("calc").value;
+            if (calc === " " || isNan(calc)) calc = 0;
+                document.getElementById("total_amount").innerHTML = calc;
+                console.log("total_amount");
+                document.getElementById("calc").innerHTML = amount * percent[i];
+            }
+        }
+
+function tipTypes() {
+    const percent = {
+        tip1: .05 * amount,
+        tip2: .1 * amount,
+        tip3: .15 * amount,
+        tip4: .2 * amount,
+    }
+}
+*/
+
+
+
+
+<input type="button" onclick="totalBill" value="Calculate">
+            <p id="totalBill"></p>
+            <div id="percentage" class="txt fad text-center"></div>
+    <div id="totalOutPut" class="txt fad text-center"></div>

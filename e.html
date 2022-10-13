@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<title>Welcome to CSCI-215!</title>
+</head>
+<body>
+    <h1>Count and Sum elements in Array</h1>
+    <p>
+        You entered <span id="input"></span>. There are <span id="count"></span> elements in the array and the order of
+        values starting from the largest goes <span id="reverse"></span>.
+    </p>
+    <script type="text/Javascript">
+    // Write a JavaScript program to prompt a user for 5 numbers ranging in value from 1 to 12 and then display a corresponding "bar chart" using "=" symbols. Write the output to the console.
+    // input: 1,2,3,4,5
+
+    let input = prompt("Enter Five Numbers from 1 to 12:");
+    const nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+    const inputArray = nums.sort(function(a, b){return b - a});
+    document.write(`all values: ${nums}<br>`);
+    document.write(`value index 0: ${nums[0]}<br>`);
+    document.write(`value index 1: ${nums[1]}<br>`);
+    document.write(`value index 2: ${nums[2]}<br>`);
+    document.write(`value index 3: ${nums[3]}<br>`);
+    document.write(`value index 4: ${nums[4]}<br>`);
+    document.write(`value index 5: ${nums[5]}<br>`);
+    document.write(`value index 6: ${nums[6]}<br>`);
+    document.write(`value index 7: ${nums[7]}<br>`);
+    document.write(`value index 8: ${nums[8]}<br>`);
+    document.write(`value index 9: ${nums[9]}<br>`);
+    document.write(`value index 10: ${nums[10]}<br>`);
+    document.write(`value index 11: ${nums[11]}<br>`);
+    document.write(`value index 12: ${nums[12]}<br>`);
+
+    let sum = 0;
+    for (let i=0; i <= 12; i++) {
+        sum = sum + inputArray[i];
+        let reverse = nums.reverse();
+    }
+
+    // output
+    document.getElementById('input').innerHTML = input;
+    document.getElementById('count').innerHTML = inputArray.length;
+    document.getElementById('reverse').innerHTML = nums.reverse();
+             
+</script>
+</body>
+</html>

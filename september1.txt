@@ -1,0 +1,41 @@
+Variables 
+include 4 parts:
+
+	1. Declaration keyword 
+		(var, let, or const)
+
+	2. Identifier 
+		(variable name) - a unique name to refer to the variable
+
+	3. Assignment operator 
+		(=)
+
+	4. Initial value 
+		(optional but recommended)
+
+
+Keywords
+
+
+	var
+	used in older browsers. Valid, but should avoid use.
+
+	let
+	used in modern browsers to declare variables whose value can change. 
+
+				Use ...
+	const
+	used with arrays or when the value held should not change.
+
+Variable Names
+
+	The general rules for constructing names for variables (unique identifiers) are:
+		- Names can contain letters, digits, underscores, and dollar signs.
+		- Names must begin with a letter
+		- Names can also begin with $ and _ (but we will not use it in this tutorial)
+		- Names are case-sensitive (y and Y are different variables)
+		- Reserved words (like JavaScript keywords) cannot be used as names
+
+The Assignment Operator
+
+	In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.

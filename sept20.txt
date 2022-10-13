@@ -1,0 +1,153 @@
+
+
+
+
+		
+		EXAMPLE #2
+
+
+Example #2:
+        Input: 39,34,56,21,18,3,99
+        Output: The average value 38 is not included in the list of values 39,34,56,21,18,3,99.
+
+
+
+				solution steps:
+
+1. make list (convert to array)
+2. sort array - then get largest based on index (length -1)
+3. print array
+4. make array
+5. loop over the values
+6. compare and determine the largest value
+
+
+let input = prompt("enter numbers");
+let numberArray = input.slice(" ");
+
+let largestValue = 0;
+
+for (let i=0; i < numberArray.length; i++) {
+ 	if (numberArray[i] > largestValue) {
+		largestValue = numberArray[i];
+	}
+}
+
+// output
+
+numberArray.sort()
+let largestValue = numberArray[numberArray.length-1];
+
+
+				QUIZ QUESTION #2
+
+write a javascript program to prompt a user for 5 numbers ranging in value from 1 to 12 and then display a corresponding "bar chart" using "=" symbols. Write the output to the console.
+
+Input:
+3 5 6 8 2
+
+===
+====
+=====
+======
+==
+
+/////
+					solution steps:
+
+1. convert to array(split)
+2. loop over array
+3. range 1 and 12 (conditional)
+4. if/else if/else
+5. repeat bar.repeat(i)
+6. inner for loop based element value
+
+\\\\\\\\
+				AVERAGE VALUE EXAMPLE #1
+
+
+Given an array of numbers, determine if the average of the numbers is included as one ofthe numbers.
+
+example #1:
+Input: 28,5,27,69,4,8,59
+
+					solution steps:
+1. prompt for input
+2. convert to array
+3. loop over the array
+	- sum all values
+	- count/length of array
+4. average is sum/length, make it whole number (parseInt())
+5. loop over array again
+	- compare array value to average value
+	- set boolean if found
+6. print output
+	- if found display one output
+	- if not found display alternate output
+
+// input
+let input = prompt("enter numbers:");
+const numberArray = input.split(",");
+let sum = 0;
+let accum = 0;
+
+// calculations
+for (let i=0; i<numberArray.length; i++) {
+	sum += Number(numberArray[i]);
+	accum++;
+}
+let ave = parseInt(sum / accum);
+let isFound = false;
+
+for (let i=0; i<numberArray.length; i++) {
+	if (numberArray[i] == ave) {
+		isFound = true;
+	}
+}
+
+// output
+
+if (isFound == true) {
+	document.write("`The average value ${ave} IS included in the list of values ${numberArray}`");
+} else {
+	document.write("`The average value ${ave} is NOT included in the list of values ${numberArray}`");
+}
+
+
+
+
+
+
+
+// parseInt - taking sum and dividing by the count, parse int will chop off all decimal values and give you a whole number //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
