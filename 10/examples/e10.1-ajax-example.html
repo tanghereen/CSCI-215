@@ -19,7 +19,14 @@
      * Load remote content 
      */
     function loadRemoteContent() {
-        // TODO
+        const ajaxRequest = new XMLHttpRequest();
+        // callback
+        ajaxRequest.onload = function() {
+            //todo
+            document.getElementById('demo').innerHTML = this.responseText;
+        }
+        ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.1-ajax-info.php");
+        ajaxRequest.send();
     }
 
     function loadDoc() {

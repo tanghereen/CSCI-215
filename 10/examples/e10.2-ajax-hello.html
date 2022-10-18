@@ -8,11 +8,54 @@
 -->
 <html>
 <body>
+    <body onload="loadHello()">
+        <p onclick="loadWorld()" style="cursor:pointer; color:blue;">Load World....</p>
 <div id="hello"></div>
 <div id="world"></div>
 <script>
 
-    //TODO
+    loadAjax("https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.2-hello.php", processHello);
+    loadAjax("https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.2-world.php", processWorld);
+
+    function loadAjax(url, callBackFunction) {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.onload = function() {
+            callBackFunction(this);
+        }
+        ajaxRequest.open("GET", url);
+        ajaxRequest.send();
+    }
+
+    function processHello(ajaxRequest) {
+        document.getElementById('hello').innerHTML = ajaxRequest.responseText;
+    }
+
+    function processWorld(ajaxRequest) {
+        document.getElementById('world').innerHTML = ajaxRequest.responseText;
+    }
+
+
+
+    /// BOTH ARE EQUIVALENT !!!!!!!!!!!
+
+
+
+    function loadHello() {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.onload = function() {
+            document.getElementById('hello').innerHTML = this.responseText;
+        }
+        ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.2-hello.php");
+        ajaxRequest.send();
+    }
+    function loadWorld() {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.onload = function() {
+            document.getElementById('world').innerHTML = this.responseText;
+        }
+        ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.2-world.php");
+        ajaxRequest.send();
+    }
 
 </script>
 </body>
