@@ -1,0 +1,37 @@
+<!--
+   Use AJAX to call e10.1-ajax-info.php and load the result in the DOM.
+   
+   This example illustrates a simple ajax request that displays the response in the browser when the
+   onclick event fires.
+-->
+<html>
+<body>
+
+<div id="demo">
+    <h2>Let AJAX change this text</h2>
+    <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+<p onclick="loadRemoteContent()" style="cursor:pointer; color: blue;">Load remote content...</p>
+<div id="demo"></div>
+<script>
+
+    /**
+     * Load remote content 
+     */
+    function loadRemoteContent() {
+        // TODO
+    }
+
+    function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("demo").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+    }
+
+    
+</script>
+</body>
+</html>
