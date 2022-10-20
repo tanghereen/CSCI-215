@@ -270,6 +270,7 @@
         <input type="button" value="Submit" name="button" class="btn btn-primary" onClick="submitForm();"></input>
         </div>
     </form>
+    <div id="customerInfo"></div>
   </div>
 </div>
 <br>
@@ -279,17 +280,35 @@
     
            
         const orderInfo = {
-            "customer": {"firstName":"","lastName":"","email":"","phone":""},
-            "shippingAddress": {"strAddr":"","city":"","state":"","ZIP":"","country":""},
-            "cart": [],
+            customer: {
+                firstName:"",
+                lastName:"",
+                email:"",
+                phone:""
+                strAddr:"",
+                city:"",
+                state:"",
+                ZIP:"",
+                country:""
+        },
+            cart: [],
             "invoice": {"subTotal":0.0,"taxRate":0.0,"tax":0.0,"grandTotal":0.0},
+            printInfo: function() {
+                let customerInfoOutput = `
+                <strong>${this.customer.firstName} ${this.customer.lastName}</strong><br/>
+                ${this.customer.email}<br/>
+                ${this.customer.phone}<br/>
+                ${this.customer.shippi}
+
+`;
+            }
             updateCartInfo: function() {
                 for (let i=0;i<this.cart.length;i++) {
                     this.invoice.subTotal+=(this.cart[i].unitPrice)*(this.cart[i].quantity);
                 }
                 this.invoice.tax=(this.invoice.subTotal*this.invoice.taxRate)
                 this.invoice.grandTotal=this.invoice.tax+this.invoice.subTotal;
-
+            
             }
         };
         //TODO: subTotal, tax (assume 6%), and the grand total
