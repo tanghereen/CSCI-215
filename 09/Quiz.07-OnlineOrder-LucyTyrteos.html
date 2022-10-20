@@ -97,25 +97,25 @@
                             <div class="m-3">
                                 <label for="firstName" class="form-label">
                                     <span class="required">*</span>
-                                    "First Name"
+                                First Name
                                 </label>
                                 <input type="text" class="form-control" name="userName" id="firstName" onfocus="clearValidation('firstNameValidation')" onblur="validateName('first')" placeholder="Jimmy" title="Enter your first name">
-                                <div pseudo="-webkit-input-placeholder" id="placeholder" style="display: block !important;">John</div>
+                                <div pseudo="-webkit-input-placeholder" id="placeholder" style="display: block !important;">Jimmy</div>
                                 <div></div>
                             </input>
                         <div id="firstNameValidation" class="errorMsg"></div>
                         <br>
                         <label for="lastName" class="form-label">
                             <span class="required">*</span>
-                            "Last Name"
+                        Last Name
                         </label>
-                        <input type="text" class="form-control" name="lastName" id="lastName" onfocus="clearValidation('lastNameValidation')" onblur="validateName('last')" placeholder="Dean" title="Enter your last name">
+                        <input type="text" class="form-control" name="lastName" id="lastName" onfocus="clearValidation('lastNameValidation')" onblur="validateName('last')" placeholder="Dean" title="Enter your last name"><div pseudo="-webkit-input-placeholder" id="placeholder" style="display: block !important;">Dean</div>
                     </input>
                     <div id="lastNameValidation" class="errorMsg"></div>
                     <br>
                     <label for="userEmail" class="form-label">
                         <span class="required">*</span>
-                        "Email Address"
+                        Email Address
                     </label>
                     <input type="text" class="form-control" name="userEmail" id="userEmail" onfocus="clearValidation('userEmailValidation')" onblur="validateEmail()" placeholder="jimmydean@example.com" title="Enter a standard email address">
                 </input>
@@ -123,7 +123,7 @@
                 <br>
                 <label for="userPhone" class="form-label">
                     <span class="required">*</span>
-                    "Phone Number"
+                    Phone Number
                 </label>
                 <input type="tel" class="form-control" name="userPhone" id="userPhone" onfocus="clearValidation('userPhoneValidation')" onblur="validatePhone()" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="123-456-7890" title="Please format like ###-###-####">
             </input>
@@ -136,7 +136,7 @@
         <div class="m-3">
             <label for="userStrAddr" class="form-label">
                 <span class="required">*</span>
-                "Street Address"
+                Street Address
             </label>
             <input type="text" class="form-control" name="userStrAddr" id="userStrAddr" onfocus="clearValidation('userStrAddrValidation')" onblur="validateStrAddr()" placeholder="123 Main St." title="Please enter a standard US Address (PO Boxes are unsupported at this time)">
         </input>
@@ -168,7 +168,9 @@
 </div>
 </div>
 <div>
-    <button style="font-size: 22px;" value="submit" type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+    <br>
+    <input type="button" value="Submit" name="button" class="btn btn-primary" onClick="testResults(form);"></input>
+    <br>
 </div>
 </form>
 <span id="spanResult" class="required">*</span>
@@ -176,7 +178,7 @@
 </div>
 </div>
     <h3>Cart</h3>
- <form name="formOne" action="https://tyrteoslm.stu.cofc.edu/PROGRAMMING/08/examples/e8.3-echo.php" method="get">
+ <form name="formTwo" action="https://tyrteoslm.stu.cofc.edu/PROGRAMMING/08/examples/e8.3-echo.php" method="get">
     <div class="container">
         <div class="row">
         <div class="border border-3 rounded bg-light">
@@ -203,14 +205,14 @@
                     <p class="m-3">Q: 01</p>
                 </div>
             </div>
-            <div id="000003" class="row">
-                <div class="col">
+            <div id="000003" class="d-flex flex-row border border-3 rounded mb-2">
+                <div class="p-2">
                     <h6 class="m-3">Pants</h6>
                 </div>
-                <div class="col">
+                <div class="p-2">
                     <p class="m-3">$10.50</p>
                 </div>
-                <div class="col">
+                <div class="p-2 ms-auto">
                     <p class="m-3">Q: 03</p>
                 </div>
             </div>
@@ -221,7 +223,7 @@
                         <p class="m-3 text-end fw-bold">Subtotal:</p>
                     </div>
             <div class="col-4">
-                <p class="m-3">$ 47.50</p> 
+                <p class="m-3">$47.50</p> 
             </div>
             </div> 
             <div class="row">
@@ -229,17 +231,18 @@
                 <p class="m-3 text-end fw-bold">Tax (6.00%):</p>
             </div> 
             <div class="col-4">
-            <p class="m-3">$ 2.85</p> 
+            <p class="m-3">$2.85</p> 
          </div> 
      </div>
       <div class="row">
        <div class="col">
         <p class="m-3 text-end fw-bold">Grand Total:</p>
          </div> 
-         <div class="col"> 
-            <p class="m-3">$ 50.35</p> 
+         <div class="col-4"> 
+            <p class="m-3">$50.35</p> 
             </div> 
         </div>
+        <input type="button" value="Submit" name="button" class="btn btn-primary" onClick="testResults(form);"></input>
         </div>
     </form>
     </div>
@@ -415,7 +418,10 @@
             return /[0-9]{3}-[0-9]{3}-[0-9]{4}/.test(userPhone);
         }
     
-
+    function testResults(form) {
+        var TestVar = form.inputbox.value;
+        alert("You typed: " + TestVar);
+    }
 </script>
 </body>
 </html>
