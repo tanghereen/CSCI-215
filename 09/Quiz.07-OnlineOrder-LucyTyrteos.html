@@ -324,7 +324,7 @@
             document.getElementById('cartInfo').innerHTML=`<div class="row"> <div class="col"> <p class="m-1 text-end fw-bold">Subtotal:</p> </div> <div class="col-4"> <p class="m-1">$ ${invoice.subTotal.toFixed(2)}</p> </div> </div> <div class="row"> <div class="col"> <p class="m-1 text-end fw-bold">Tax (${(invoice.taxRate*100).toFixed(2)}%):</p> </div> <div class="col"> <p class="m-1">$ ${invoice.tax.toFixed(2)}</p> </div> </div> <div class="row"> <div class="col"> <p class="m-1 text-end fw-bold">Grand Total:</p> </div> <div class="col"> <p class="m-1">$ ${invoice.grandTotal.toFixed(2)}</p> </div> </div>`;
         }
 
-        function submitForm(form) {
+        function submitForm() {
             if (pageIsValid) {
                 // clear alert info and hide
                 document.getElementById('respMsgText').innerHTML = '';
