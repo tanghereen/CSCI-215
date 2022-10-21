@@ -35,12 +35,15 @@
 </div>
 <script>
     //TODO
-function loadRemoteContent(itemId ) {
-    const ajaxRequest = new XMLHttpRequest();
-    ajaxRequest.onload = function() {
-
+    function loadRemoteContent(itemId) {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.onload = function() {
+        // this is where the response comes back
+            document.getElementById('additionalInfo').innerHTML = this.responseText;
     }
-    ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.3-products.php");
+    // define the connection to get info
+    ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.3-products.php?id="+itemId);
+    // sends request and the callback handles the response
     ajaxRequest.send();
 }
 </script>
