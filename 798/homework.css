@@ -4,24 +4,36 @@ element {
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
-    background-color: hsl(218, 83%, 77%);
+    background-color: darkolivegreen;
 }
 h1 {
-    color: hsl(223, 64%, 39%);
+    background-color: darkslategrey;
+    padding: .5em;
+   font-family: "Menlo", "Meslo LG", monospace;
+    color: #FFFFFF;
+    text-align: center; 
+    width: 420px;
+    float: left;
+    text-shadow: 1px 1px 2px #FFFFFF; 
 }
 h2 {
-  color: #d27cda;
+  background-color: darkslategrey;
   text-align: center;
-  padding: auto;
+  padding: 10px;
+  color: #FFFFFF;
+  font-family: "Menlo", "Meslo LG", monospace;
 }
-p {
-  color:hsl(300, 27%, 54%)
-}
-#wrapper {
-  background-color: white;
-  width: 80%;
-  margin: auto;
-  max-width: 1200px;
+p { 
+    font-family: "Menlo", "Meslo LG", monospace;
+    height: 100%;
+   line-height: 1.725;
+    max-width: 1200px;
+   text-rendering: geometricPrecision;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    margin: 1rem auto;
+    text-align: center;
 }
 nav {
     display: flex;
@@ -29,35 +41,40 @@ nav {
     padding: 10px;
     font-size: 1.25em;
     word-spacing: 1em;
-    background-color: hsl(226, 88%, 66%);
-    color: #FFFFFF;
+    background-color: darkslategray;
+    color: #FEF0E6;
     justify-content: center;
     text-align: center;
+   font-family: "Menlo", "Meslo LG", monospace;
+
 }
 nav a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FEF0E6;
 }
-.header-image {
-background-image: url('nebula-space-astro-photo-astronomy-sky-1420873.jpg');
-background-position: center;
-background-repeat: no-repeat;
-position: relative;
-background-size: cover;
+header {
+    background-color: #000033; color:#FF9;
+    background-image: url('nebula-space-astro-photo-astronomy-sky-1420873.jpg');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
 }
-.header-text {
-text-align: center;
-position: relative;
-top: 60%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: black;
+header p {
+  color: #FAF0E6;
+  margin: auto;
+  padding: 15px;
+  font-size: 2.3em;
 }
 #wrapper {
     width: 80%;
     margin: auto;
-    background-color: #faf0e6;
-    padding: 10px;
+    max-width: 1200px;
+    background-color: darkseagreen;
 }
 img {
     width: 100%;
@@ -76,24 +93,18 @@ footer {
     display: flex;
     color: lightblue;
     justify-content: center;
-    font-size: .89em;
+    font-size: 1em;
     align-items: center;
-    height: 100px;
-    background-color: hsl(223, 64%, 39%);;
-    border-top: thin solid #d27cda;
-    padding-top: 10px;
-}
-.column {
-  float: left;
-  width: 33.33%;
+    height: 90px;
+    background-color: darkslategrey;
+    border-top: thin solid darkslategray;
+    padding-top: 20px;
 }
 ol {
-  
-  color:hsl(300, 85%, 24%)
+  color: lightblue;
 }
 ul {
-  
-  color:hsl(300, 85%, 24%)
+  color: lightblue;
 }
 dt {
   font-weight: bold;
@@ -114,7 +125,8 @@ dd {
   margin: auto;
 }
 #homework {
-  background-color: lavender;
+  background-color: darkslategray;
+  color: lightblue;
   flex: 5;
   min-width: 20em;
   padding: 1.5em;
@@ -122,28 +134,55 @@ dd {
 }
 
 #milestones {
-  background-color: lavender;
-  flex: 5;
+ background-color: darkslategray;
+  color: lightblue;
+    flex: 5;
   min-width: 15em;
   padding: 1.5em;
   margin: 0.5em;
 }
-
-
+li p {
+  text-align: left;
+}
+mark {
+  background-color: darkslategrey;
+  color: lightblue;
+}
 nav a:link {
-  color: azure;
+  color: #FEF0E6;
+ 
 }
 
 nav a:visited {
-  color: lavender;
+  color: #FEF0E6;
 }
 
 nav a:hover {
-  color: lightcyan;
+
+  color: darkseagreen;
+ 
 }
 
 nav li:hover {
-  border-bottom: 5px solid dodgerblue;
+  border-bottom: 5px solid #FEF0E6;
+}
+
+a:link {
+  color: #FEF0E6;
+  
+}
+
+a:visited {
+  color: #FEF0E6;
+}
+
+a:hover {
+  color: darkseagreen;
+ 
+}
+
+li:hover {
+  border-bottom: 5px solid #FEF0E6;
 }
 nav ul {
   list-style-type: none;
@@ -158,8 +197,8 @@ nav li {
   flex-direction: column;
   font-size: 1.25em;
   word-spacing: 1em;
-  background-color: hsl(226, 88%, 66%);
-  color: #FFFFFF;
+  background-color: darkseagreen;
+  color: #FAF0E6;
   justify-content: center;
   text-align: center;
 }
@@ -170,7 +209,7 @@ nav li {
 }
 @media screen and (max-width: 600px) {
   * {
-    min-width: auto;
+   min-width: auto;
   }
 
   body {
@@ -190,6 +229,7 @@ nav li {
     min-height: 100px;
   }
 }
+
 .btn-block {
     display: block;
     width: 100%;
@@ -201,9 +241,9 @@ nav li {
     border-radius: 6px;
 }
 .btn-danger {
-    color: rgb(255 255 255);
-    background-color: rgb(18, 48, 128);
-    border-color: rgb(17, 18, 97);
+    color: #FEF0E6;
+    background-color: darkseagreen;
+    border-color: darkslategrey;
 }
 .btn {
     display: inline-block;
@@ -215,6 +255,7 @@ nav li {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
+    color: #FFFFFF;
     background-image: none;
     border: 1px solid rgb(0 0 0 / 0%);
     padding: 6px 12px;
@@ -225,6 +266,9 @@ nav li {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    background-color: lightseagreen;
+    font-family: "Menlo", "Meslo LG", monospace;
+
 }
 [role=button] {
     cursor: pointer;
