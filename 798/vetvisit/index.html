@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vet Visit</title>
+<link rel="stylesheet" href="vet.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Vet Visit</h1>
+    <section>
+        <form action="mailto:tyrteoslm@g.cofc.edu" method="post">
+<fieldset>
+    <legend>About Your Pet</legend>
+<label for="fullname">Full Name</label>
+<input type="text" name="fullname" id="fullname">
+<br>
+<label for="email">Email Address</label>
+<input type="email" name="email" id="email" required>
+<br>
+<label for="pet_type">Type of Pet</label>
+
+<select name="pet_type" id="pet_type" size="4">
+<option>Cat</option>
+<option>Dog</option>
+<option>Bird</option>
+<option>Rodent</option>
+<option>Horse</option>
+<option>Reptile</option>
+</select>
+
+</fieldset>
+<br>
+<fieldset>
+    <legend>More Info</legend>
+<label for="message">Messages</label>
+<br>
+<textarea name="message" id="message" cols="30" rows="10">
+    please type here . . .
+</textarea>
+</fieldset>
+<input type="submit" name="submit" id="submit" value="Send Message">
+
+        </form>
+    </section>
+</div>
+</body>
+</html>

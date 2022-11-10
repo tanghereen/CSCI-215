@@ -1,8 +1,3 @@
-<!--
-    Use AJAX to call e10.3-ajax-products.php and load the results in the DOM.
-
-    This example illustrates a technique of providing an id to a simple GET request and displaying the response.
--->
 <html>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
@@ -34,18 +29,21 @@
     </div>
 </div>
 <script>
-    //TODO
-    function loadRemoteContent(itemId) {
+     /**
+     * Load remote content for id
+     * @param id
+     */
+    function loadRemoteContent(id) {
         const ajaxRequest = new XMLHttpRequest();
         ajaxRequest.onload = function() {
-        // this is where the response comes back
-            document.getElementById('additionalInfo').innerHTML = this.responseText;
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("additionalInfo").innerHTML = this.responseText;
+            }
+        }
+        ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.3-products.php?id="+id);
+        ajaxRequest.send();
     }
-    // define the connection to get info
-    ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/PROGRAMMING/10/examples/e10.3-products.php?id="+itemId);
-    // sends request and the callback handles the response
-    ajaxRequest.send();
-}
+
 </script>
 </body>
 </html>

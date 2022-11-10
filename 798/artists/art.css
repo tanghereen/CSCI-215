@@ -1,0 +1,190 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: lavender;
+    background-color: rgb(48, 48, 117);
+}
+
+h1 {
+    color: white;
+}
+h2 {
+    text-align: center;
+    background-color: rgb(48, 48, 117);
+    padding: 1em;
+    color: white;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 1.25em;
+    word-spacing: 1em;
+    text-align: center;
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+    background-color: hsl(204, 58%, 30%);
+    color: #FFFFFF;
+    justify-content: center;
+}
+nav li {
+    word-spacing: 1em;
+    padding: auto;
+    margin: auto;
+}
+
+nav a {
+    text-decoration: none;
+}
+li {
+    color: white;
+}
+header {
+    background-color: rgb(48, 48, 117);
+    color: whitesmoke;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
+    background-image: url('the-road-menders.jpg');
+    
+}
+
+#wrapper {
+    width: 1260px;
+    margin: auto;
+    background-color: lavender;
+    padding: 10px;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+footer {
+    color: #FFFFFF;
+    font-size: .75em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    background-color: rgb(48, 48, 117);
+    border-top: thin solid #7c8dda;
+    padding: 50px;
+    clear: both;
+}
+footer a {
+    color: white;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(48, 48, 117);
+    margin: auto;
+}
+#vincent {
+    background-color: #7c8dda;
+    flex: 3;
+    min-width: 20em;
+    padding: 1.5em;
+    margin: 0.5em;
+}
+#van {
+    background-color: #7c8dda;
+    flex: 4;
+    min-width: 15em;
+    padding: 1.5em;
+    margin: 0.5em;
+}
+#gogh {
+    background-color: #7c8dda;
+    flex: 3;
+    min-width: 20em;
+    font-size: 0.85em;
+    padding: 1em;
+    margin: 0.5em;
+}
+#about {
+    background-color: #7c8dda;
+    color: lavender;
+    flex: 5;
+    padding: 1.5em;
+    margin: 0.5em;
+}
+#artist {
+    background-color: #7c8dda;
+    color: lavender;
+    flex: 5;
+    padding: 1.5em;
+    margin: 0.5em;
+}
+blockquote {
+    padding: 2rem;
+    background-color: hsl(204, 58%, 30%);
+    color: hsl(24, 100%, 85%);
+    width: 80%;
+    margin: 0 1rem 1rem 0;
+}
+
+blockquote p {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+}
+#gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+img {
+    margin: 1em;
+    box-shadow: 10px 10px 10px #3c3939;
+}
+@media screen and (max-width: 600px) {
+#content {
+    width: 100%;
+    flex-direction: column;
+}
+body {
+    background-color: rgb(20, 20, 127);
+    color: lavender;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    min-height: 100px;
+}
+#gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1em;
+}
+li a {
+    color: white;
+}
+img {
+    margin: 1em;
+    box-shadow: 10px 10px 10px #3c3939;
+}
+* {
+    min-width: auto;
+}
+#wrapper {
+    width: 100%;
+}
+}
+li a {
+    color: white;
+}

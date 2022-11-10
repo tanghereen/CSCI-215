@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<!-- required meta tags -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<script>window.onload = () =>
+	//the function called when Calculate button is clicked.
+	{
+		/*calling a function calculateTip
+		which will calculate the tip for the bill.*/
+		document.querySelector('#calculate').onclick = calculateTip;
+	}
+
+function calculateTip() {
+	/*assign values of ID : amount, person and service to
+	variables for further calculations.*/
+	let amount = document.querySelector('#amount').value;
+	let service = document.querySelector('#services').value;
+
+	console.log(service);
+	/*if statement will work when user presses
+		calculate without entering values. */
+	//so will display an alert box and return.
+	if (amount === '' && service === 'Select') {
+		alert("Please enter valid values");
+		return;
+	}
+
+	//now we are checking number of persons
+	
+	/*calculating the tip by multiplying total-bill and type of
+	service; then dividing it by number of persons.*/
+	//fixing the total amount upto 2 digits of decimal
+	let total = (amount * service);
+	total = total.toFixed(2);
+
+	//finally displaying the tip value
+	document.querySelector('.tip').style.display = 'block';
+	document.querySelector('#total').innerHTML = total;
+}
+var total = parseFloat(document.getElementById("total").value);
+var tip = parseFloat(document.getElementById("percentage").value) * 0.01;
+  
+var totalTip = amount * tip;
+var totalBill = amount + totalTip;
+
+	</script>
+<style>
+body {
+	background-color: lavender;
+	font-family: "Raleway", sans-serif;
+}
+
+p {
+	background-color: lavender;
+	font-family: "Raleway", sans-serif;
+}
+
+.container {
+	width: 350px;
+	height: 500px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 20px;
+}
+
+h1 {
+	position: absolute;
+	left: 50%;
+	top: -60px;
+	transform: translateX(-50%);
+	background-color: #ff851b;
+	color: #fff;
+	font-weight: 100;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-size: 18px;
+	text-align: center;
+	padding: 10px;
+}
+
+.wrapper {
+	padding: 30px;
+}
+
+input,
+select {
+	border: none;
+	border-bottom: 1px solid #0074d9;
+	padding: 10px;
+}
+
+input:focus,
+select:focus {
+	border: 1px solid #0074d9;
+	outline: none;
+}
+
+select {
+	width: 88% !important;
+}
+
+button {
+	margin: 20px auto;
+	width: 150px;
+	height: 50px;
+	background-color: green;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+}
+
+.tip {
+	text-align: center;
+	font-size: 18px;
+	display: none;
+}
+ </style>
+
+<!-- bootstrap CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<title>What's That Tip!</title>
+</head>
+    <body>
+    <div class="container">
+        <div class="wrapper">
+        <div class="row">
+            <div class="col">
+        <h2>Enter amount:</h2>
+        <input type="text" id="amount"
+				placeholder="Amount to be paid"> $
+        <br>
+        <p>Tell us your tip, and we'll calculate it in no time!</p>
+        <br>
+    </form>
+</div>
+            <div class="col">
+    <form>
+    <h2>Select tip:</h2>
+        <select id="services">
+				<option selected disabled hidden>
+					Select
+				</option>
+				<option value="0.25">25% - Top Notch</option>
+				<option value="0.20">20% - Excellent</option>
+				<option value="0.15">15% - Good</option>
+				<option value="0.10">10% - Bad</option>
+				<option value="0.05">5% - Worst</option>
+			</select>
+        <p>Enter tip, click "Calculate" to submit the form, and WE'LL DO THE REST!</p>
+<br>
+    </form>
+    </div>
+         <div class="col">
+                <h2>Now, calculate!</h2>
+             <p>This will combine the two, performing a calculation and returning the result...</p>
+        <button id="calculate">Calculate</button>
+        <br>
+        <div class="tip">
+            <div id="total" class="txt"><label for="tot"></label></span>
+        <br>
+    <span id="total"></span>$
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

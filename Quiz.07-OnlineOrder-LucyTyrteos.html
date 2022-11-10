@@ -1,0 +1,350 @@
+<!--
+
+    ======================================================================================================
+     Student Certification
+    ======================================================================================================
+
+    This assignment is individual work only!
+
+    I certify that I have written this code myself. Nobody else has written it for me. I have not copied and
+    pasted it from somebody else. I have solved these problems myself using the materials used in class.
+
+    If I am found guilty of breaking these rules or conducting other dishonest actions while working on this
+    assignment, I understand that I will receive a score of 0 for this assignment, and that the instructor may
+    report my dishonesty for a conduct review by the Dean of Student Affairs which could result in an F in
+    this course.
+
+    I acknowledge the above rules of this assignment.
+
+    NAME: Lucy Tyrteos
+    DATE: 10/15/22
+
+    ======================================================================================================
+
+
+    Quiz No.7: Submit On-Line Order
+    ------------------------------------------------------------------------------------------------------
+    Based on the orderInfo model below create a UI using Bootstrap and JavaScript so that a user can provide their
+    personal info and shipping location for an online order.
+
+    The solution should include the following elements:
+
+    - Use Bootstrap's grid for layout
+    - The 'customer' attribute should include: first and last name, email address, and phone number.
+    - The 'shippingAddress' attribute should include: streetAddress, city, state, postal code, and country.
+    - The 'cart' attribute will include an array of objects with following values:
+        - id - a unique number
+        - desc - a description of the item. Max 100 chars
+        - unitPrice - the unit price of the item
+        - quantity - the number of units for the item
+    - Create an init() method that initializes the object with default values.
+    - The init() method will define the list of items in the cart. You can define the list with the values
+      you choose, but there must be a minimum of 3 items in the cart.
+    - The UI will ONLY DISPLAY the Cart information as defined in the init() method. The cart should provide calculations for an extended total (unitPrice * quantity), subTotal, tax (assume 6%), and the grand total.
+    - The UI will include a form to enter the customer and shipping information.
+    - The UI should validate the user input. Where applicable use regex for input validation.
+    - If there are validation errors, display an alert and explain the error to the user.
+    - If the form is valid, submit to the e8.3-echo.php script hosted on your student web account. The correct response will show the customer and shipping information from the form
+
+    Submitting the Quiz
+    -------------------
+    Create a file called OnLineOrder-<YourName>.html (example OnLineOrder-ThomasMoorer.html) and use zip
+    to compress the file.
+
+    Please make sure to zip the html file before submitting so that the solution file doesn't get altered by OAKs.
+
+-->
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- CSS -->
+    <style>
+    .formOne { 
+    display: flex;
+ }
+ footer {
+    padding: 5px;
+    text-align: center;
+ }
+ .container {
+    padding: 10px;
+ }
+ h1, p {
+    text-align: center;
+ }
+ h3 {
+    text-align: center;
+ }
+ .p-2 {
+    text-align: right;
+ }
+    </style>
+</head>
+<body onload="init()" style="background-color:lightblue">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Online Order</h1>
+            <h2>Customer Info</h2>
+            <div id="customerInfo"></div>
+            <h2>Cart Info</h2>
+            <div id="cartInfo"></div>
+        </div>
+                
+         <div id="respMsgAlert" class="alert alert-danger visually-hidden" role="alert">
+        <div id="respMsgText"></div>
+</div>
+         <div class="col-2"></div>
+</div>
+        <div class="row">
+          <div class="col-1"></div>
+             <div class="col-lg-6">
+                <div>
+                 <form name="formOne" action="https://tyrteoslm.stu.cofc.edu/PROGRAMMING/08/examples/e8.3-echo.php" method="get">
+                <div class="mb-3">
+                    <h3>Customer Info</h3>
+                <div class="border border-3 rounded bg-light">
+                <div class="m-3">
+                <label for="firstName" class="form-label">
+                <span class="required">*</span>
+                 First Name
+                 </label>
+                        <input type="text" class="form-control" name="userName" id="firstName" onfocus="clearValidation('firstNameValidation')" onblur="validateName('first')" placeholder="Jimmy" title="Enter your first name">
+                             <div pseudo="-webkit-input-placeholder" id="placeholder" style="display: block !important;">Jimmy</div>
+                    <div></div>
+                 </input>
+                    <div id="firstNameValidation" class="errorMsg"></div>
+                        <br>
+                  <label for="lastName" class="form-label">
+                    <span class="required">*</span>
+                        Last Name
+             </label>
+                     <input type="text" class="form-control" name="lastName" id="lastName" onfocus="clearValidation('lastNameValidation')" onblur="validateName('last')" placeholder="Dean" title="Enter your last name"><div pseudo="-webkit-input-placeholder" id="placeholder" style="display: block !important;">Dean</div>
+            </input>
+                <div id="lastNameValidation" class="errorMsg"></div>
+                    <br>
+                <label for="userEmail" class="form-label">
+                    <span class="required">*</span>
+                        Email Address
+            </label>
+                    <input type="text" class="form-control" name="userEmail" id="userEmail" onfocus="clearValidation('userEmailValidation');" onblur="validateEmail();" placeholder="jimmydean@example.com" title="Enter a standard email address">
+            </input>
+                 <div id="userEmailValidation" class="errorMsg"></div>
+                <br>
+         <label for="userPhone" class="form-label">
+         <span class="required">*</span>
+                    Phone Number
+        </label>
+                <input type="tel" class="form-control" name="userPhone" id="userPhone" onfocus="clearValidation('userPhoneValidation');" onblur="validatePhone();" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="123-456-7890" title="Please format like ###-###-####">
+            </input>
+    <div id="userPhoneValidation" class="errorMsg"></div>
+    </div>
+    </div>
+    <br>
+    <h3>Shipping Address</h3>
+    <div class="border border-3 rounded bg-light">
+        <div class="m-3">
+            <label for="userStrAddr" class="form-label">
+            <span class="required">*</span>
+             Street Address
+        </label>
+         <input type="text" class="form-control" name="userStrAddr" id="userStrAddr" onfocus="clearValidation('userStrAddrValidation');" onblur="validateStrAddr();" placeholder="123 Main St." title="Please enter a standard US Address (PO Boxes are unsupported at this time)">
+        </input>
+     <div id="userStrAddrValidation" class="errorMsg"></div>
+        <br>
+    <label for="userCity" class="form-label">
+         <span class="required">*</span>
+            City
+    </label>
+    <input type="text" class="form-control" name="userCity" id="userCity" onfocus="clearValidation('userCityValidation');" onblur="validateCity();" placeholder="Anchorage" title="Enter just the name of the city for your address">
+ </input>
+ <div id="userCityValidation" class="errorMsg"></div>
+    <br>
+<label for="userState" class="form-label"><span class="required">*</span>State</label>
+<span class="required">*</span>
+</label>
+    <input type="text" class="form-control" name="userState" id="userState" onfocus="clearValidation('userStateValidation');" onblur="validateState();" placeholder="AK" title="Please enter the state for your address in abbreviated form (no periods)"></input>
+<div id="userStateValidation" class="errorMsg"></div>
+<br>
+    <label for="userZIP" class="form-label"><span class="required">*</span> Postal Code</label>
+<input type="text" class="form-control" name="userZIP" id="userZIP" onfocus="clearValidation('userZIPValidation');" pattern="[0-9]{5}" onblur="validateZIP();" placeholder="12345" title="Please enter the 5-digit zip code for your address"></input>
+    <div id="userZIPValidation" class="errorMsg"></div>
+<br>
+    <label for="userCountry" class="form-label"><span class="required">*</span> Country</label>
+<input type="text" class="form-control" name="userCountry" id="userCountry" onfocus="clearValidation('userCountryValidation');" onblur="validateCountry();" placeholder="United States" title="Please enter the country for your Address (non-abbreviated form)">
+        <div id="userCountryValidation" class="errorMsg"></div>
+            <br>
+        </div>
+    </div>
+<div>
+    <br>
+        <input type="button" value="Submit" name="button" class="btn btn-primary" onclick="testResults();"></input>
+         <br>
+    </div>
+</form>
+        <span id="spanResult" class="required">*</span>
+        denotes a value is required to proceed!
+    </div>
+</div>
+    <h3>Cart</h3>
+ <form name="formTwo" action="https://tyrteoslm.stu.cofc.edu/PROGRAMMING/08/examples/e8.3-echo.php" method="get">
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <div class="border border-3 rounded bg-light">
+            <div id="cartDisplay" class="p-2">
+                <div id="000001" class="d-flex flex-row border border-3 rounded mb-2">
+                <div class="p-2">
+                    <h6 class="m-3">Socks</h6>
+                </div>
+                <div class="p-2">
+                    <p class="m-3">$4.00</p>
+                </div>
+                <div class="p-2 ms-auto">
+                    <p class="m-3">Q: 02</p>
+                </div>
+            </div>
+                <div id="000002" class="d-flex flex-row border border-3 rounded mb-2">
+                <div class="p-2">
+                    <h6 class="m-3">T-Shirt</h6>
+            </div>
+                <div class="p-2">
+                    <p class="m-3">$8.00</p>
+            </div>
+                <div class="p-2 ms-auto">
+                    <p class="m-3">Q: 01</p>
+            </div>
+        </div>
+            <div id="000003" class="d-flex flex-row border border-3 rounded mb-2">
+                <div class="p-2">
+                    <h6 class="m-3">Pants</h6>
+            </div>
+                <div class="p-2">
+                    <p class="m-3">$10.50</p>
+            </div>
+                <div class="p-2 ms-auto">
+                    <p class="m-3">Q: 03</p>
+            </div>
+        </div>
+     </div>
+     <div id="cartInfo" class="p-2">
+        <div class="row">
+            <div class="col">
+             <p class="m-3 text-end fw-bold">Subtotal:</p>
+    </div>
+            <div class="col-4">
+                <p class="m-3">$47.50</p> 
+        </div>
+    </div> 
+        <div class="row">
+            <div class="col"> 
+                <p class="m-3 text-end fw-bold">Tax (6%):</p>
+            </div> 
+            <div class="col-4">
+            <p class="m-3">$2.85</p> 
+         </div> 
+     </div>
+      <div class="row">
+       <div class="col">
+        <p class="m-3 text-end fw-bold">Grand Total:</p>
+         </div> 
+         <div class="col-4"> 
+            <p class="m-3">$50.35</p> 
+    </div> 
+</div>
+        <input type="button" value="Submit" name="button" class="btn btn-primary" onClick="submitForm();"></input>
+        </div>
+    </form>
+    <div id="customerInfo"></div>
+  </div>
+</div>
+<br>
+<br>
+<!-- JavaScript -->
+<script type="text/javascript">
+
+
+    /*
+                        Model a customer order with customer info name, address, email, phone and an array of products in the cart
+                        */
+
+                        const orderInfo = {
+                            customer: {
+                            firstName: "",
+                        lastName: "",
+                        address: {
+                            streetAddress: "",
+                        city: "",
+                        state: "",
+                        postalCode: "",
+                        country: ""
+            },
+                        emailAddress: "",
+                        phoneNumber: ""
+        },
+                        cart: [],
+                        printInfo: function() {
+                            //customer info
+                            let customerInfoOutput = `
+                        <strong>${this.customer.firstName} ${this.customer.lastName}</strong><br />
+                        ${this.customer.address.streetAddress}<br />
+                        ${this.customer.address.city} ${this.customer.address.state} ${this.customer.address.postalCode}<br />
+                        ${this.customer.address.country}
+                        `;
+                        document.getElementById('customerInfo').innerHTML = customerInfoOutput;
+                        //cart info
+                        for (let i=0; i<this.cart.length; i++) {
+                            let itemId = this.cart[i].id;
+                        let itemDesc = this.cart[i].desc;
+                        let itemValue = (this.cart[i].unitPrice * this.cart[i].quantity).toFixed(2);
+                        document.getElementById('cartInfo').innerHTML += `(${itemId}) ${itemDesc}: $${itemValue} ($${this.cart[i].unitPrice} x ${this.cart[i].quantity})<br>`;
+            }
+        }
+    };
+
+    function init() {
+        // customer info
+        orderInfo.customer.firstName = "Bill";
+        orderInfo.customer.lastName = "Smith";
+        orderInfo.customer.emailAddress = "wildbill@aol.com";
+        orderInfo.customer.phoneNumber = "(843) 555-1212";
+        orderInfo.customer.address.streetAddress = "123 Main Street";
+        orderInfo.customer.address.city = "Charleston";
+        orderInfo.customer.address.state = "South Carolina";
+        orderInfo.customer.address.postalCode = "29407";
+        orderInfo.customer.address.country = "USA";
+
+        // cart info
+        orderInfo.cart = [
+            {
+                id: '121',
+                desc: 'Ping Pong Balls',
+                unitPrice: 3.45,
+                quantity: 5
+            }, {
+                id: '141',
+                desc: 'Tennis Balls',
+                unitPrice: 6.45,
+                quantity: 4
+            }
+        ];
+
+        orderInfo.printInfo();
+    }
+
+</script>
+</body>
+</html>

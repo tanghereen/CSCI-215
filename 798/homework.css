@@ -1,0 +1,231 @@
+element {
+  box-sizing: border-box;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: hsl(218, 83%, 77%);
+}
+h1 {
+    color: hsl(223, 64%, 39%);
+}
+h2 {
+  color: #d27cda;
+  text-align: center;
+  padding: auto;
+}
+p {
+  color:hsl(300, 27%, 54%)
+}
+#wrapper {
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 1.25em;
+    word-spacing: 1em;
+    background-color: hsl(226, 88%, 66%);
+    color: #FFFFFF;
+    justify-content: center;
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.header-image {
+background-image: url('nebula-space-astro-photo-astronomy-sky-1420873.jpg');
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+background-size: cover;
+}
+.header-text {
+text-align: center;
+position: relative;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: black;
+}
+#wrapper {
+    width: 80%;
+    margin: auto;
+    background-color: #faf0e6;
+    padding: 10px;
+}
+img {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    background-repeat: no-repeat;
+}
+footer a {
+  text-decoration: none;
+  color: linen;
+}
+footer p {
+  color: lightblue;
+}
+footer { 
+    display: flex;
+    color: lightblue;
+    justify-content: center;
+    font-size: .89em;
+    align-items: center;
+    height: 100px;
+    background-color: hsl(223, 64%, 39%);;
+    border-top: thin solid #d27cda;
+    padding-top: 10px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+ol {
+  
+  color:hsl(300, 85%, 24%)
+}
+ul {
+  
+  color:hsl(300, 85%, 24%)
+}
+dt {
+  font-weight: bold;
+  color:hsl(300, 85%, 24%)
+}
+dd {
+  color:hsl(300, 27%, 54%)
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+#homework {
+  background-color: lavender;
+  flex: 5;
+  min-width: 20em;
+  padding: 1.5em;
+  margin: 0.5em;
+}
+
+#milestones {
+  background-color: lavender;
+  flex: 5;
+  min-width: 15em;
+  padding: 1.5em;
+  margin: 0.5em;
+}
+
+
+nav a:link {
+  color: azure;
+}
+
+nav a:visited {
+  color: lavender;
+}
+
+nav a:hover {
+  color: lightcyan;
+}
+
+nav li:hover {
+  border-bottom: 5px solid dodgerblue;
+}
+nav ul {
+  list-style-type: none;
+  /* dont know why list-style-type doesn't work */
+  padding: 0;
+  margin: 0;
+  /*((((( or should it be auto )))))) */
+  text-align: center;
+}
+nav li {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25em;
+  word-spacing: 1em;
+  background-color: hsl(226, 88%, 66%);
+  color: #FFFFFF;
+  justify-content: center;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  * {
+    min-width: auto;
+  }
+
+  body {
+    margin: 0 auto;
+  }
+
+  #wrapper {
+    width: 100%;
+  }
+
+  #content {
+    flex-direction: column;
+    /* font-size: 1.2em; */
+  }
+
+  header {
+    min-height: 100px;
+  }
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-danger {
+    color: rgb(255 255 255);
+    background-color: rgb(18, 48, 128);
+    border-color: rgb(17, 18, 97);
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid rgb(0 0 0 / 0%);
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+[role=button] {
+    cursor: pointer;
+}

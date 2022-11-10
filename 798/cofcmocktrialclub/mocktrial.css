@@ -1,0 +1,146 @@
+body { 
+    background-color: #480607;
+    color: #461212;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    line-height: 200%;
+    margin-right: auto;
+    margin-left:  auto;
+    max-width: 1200px;
+    padding-right: 5px;
+    padding-left:  5px;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: #480607;
+    padding: .5em;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: #FFFFFF;
+    text-align: center; 
+    width: 420px;
+    float: left;
+    text-shadow: 1px 1px 2px #000000; 
+}
+
+h2 { 
+    background-color: #480607;
+    color: #FAF0CD;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    text-align: center;
+    margin: 1em 0 0.5em;
+    border-bottom: 2px dashed #FAF0CD;
+    padding: .5em;
+}
+header {
+    background-color: #000033; color:#FF9;
+    background-image: url(Cougar-Lights-8_RSmith.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
+}
+nav {
+    font-weight: bold;
+    word-spacing: .5em;
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+    color: #480607;
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+nav a { 
+    text-decoration: none; 
+}
+p { 
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+    font-size: 14pt;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border-top: 2px solid #c9cacc;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+  .feature { 
+    color: #C70000; 
+}
+  footer { 
+    background-color: #480607; 
+    color: #FAF0CD;
+    font-size: .75em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    padding-top: 10px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+  .company {
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+  #wrapper {
+    background-color: #FAF0CD;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-indent: 3em;
+    max-width: 1280px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+  ul {
+    font-size: 12pt;
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+  blockquote {
+    padding: 2rem;
+    background-color: #480607;
+    color: hsl(24, 100%, 85%);
+    width: 94%;
+    margin: 0 1rem 1rem 0;
+  }
+  blockquote p {
+    font-size: 1.25rem;
+    margin: 0;
+    text-align: center;
+  }
+  hr {	
+    border: 0.125rem solid #480607;
+    margin: 3rem 0;
+  }
+  ol {
+    font-size: 12pt;
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+img {
+    display: block;
+    margin: auto;
+}

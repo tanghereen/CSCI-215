@@ -1,0 +1,126 @@
+body { 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: hsl(300, 100%, 10%);
+    background-color: whitesmoke;
+}
+h1 {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: orangered;
+    text-align: center; 
+    text-shadow: 1px 1px 2px #000000; 
+    font-size: 55px;
+}
+h2 { 
+    background-color: gray; 
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    text-align: center; 
+    font-size: 18pt;
+    color: #FFFFFF;
+    margin: 1em 0 0.5em;
+    padding: 1em;
+    padding-left: 50px;
+    background-image: url();
+    background-repeat: no-repeat;
+}
+ header {
+    color:#FF9;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
+}
+ nav {
+    background-color: gainsboro;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 10px 10px 10px;
+}
+nav li { 
+  display: inline-block;
+  width: 7em;
+  border: none;
+
+}
+nav ul {
+  text-align: center;
+}
+ nav a { 
+    text-decoration: none;
+}
+ p { 
+    font-size: 1.2em;
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+    line-height: 130%;
+}
+li { 
+  font-size: 1em;
+  text-indent: 1em; 
+  width: 90%;
+  max-width: 75ch;
+  margin: 2rem auto;
+  line-height: 150%
+}
+ ul {
+    font-size: 14pt;
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+    line-height: 150%;
+}
+  footer { 
+    color: #FFFFFF;
+    font-size: .75em;
+    font-style: italic; 
+    text-align: center;
+    padding: 1em;
+    background-color: gray;
+    border-top: thin solid #d27cda;
+    padding-top: 10px;
+    clear: both;
+    border-top: 1px dotted orangered;
+}
+  #wrapper {
+    width: 980px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+  hr {	
+    border: 0.125rem solid hsl(300, 50%, 90%);
+    margin: 3rem 0;
+    clear: both;
+}
+  
+  #col1 {
+    width: 550px;
+    float: left;
+    min-height: 450px; 
+	  margin: 10px 10px 10px 10px;
+    padding: 15px 15px 15px 15px;
+}
+  #col2 {
+    width: 330px;
+    float: right;
+    min-height: 450px;
+	  padding: 15px 15px 15px 15px; 
+	  margin: 10px 10px 10px 10px;
+    background-color: gainsboro;
+}
+  img {
+    display: block;
+    margin: auto;
+  }
+  #heropic {
+    background-image: url(hero_image-xcf.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+  

@@ -1,0 +1,21 @@
+JavaScript
+console.log("Hello, World!");
+
+Python
+print('Hello, World!')
+
+C#
+Console.WriteLine("Hello, World!");
+
+Java
+System.out.println("Hello, World!");
+
+PHP
+echo 'Hello, World!';
+
+Ruby
+puts "Hello, World!"
+
+
+
+The challenges you'll face inside these Catacombs will not only test your ability to wield the power of APIs, but help you discover where your magic aligns. Is it in using code to express yourself? Solving problems with code? Harnessing the theory and science underneath the code? Or using code to push the boundaries of everyday life?
