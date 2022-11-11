@@ -137,7 +137,7 @@ dd {
  background-color: darkslategray;
   color: lightblue;
     flex: 5;
-  min-width: 15em;
+  min-width: 20em;
   padding: 1.5em;
   margin: 0.5em;
 }
@@ -227,6 +227,10 @@ nav li {
 
   header {
     min-height: 100px;
+  }
+
+  nav {
+    width: 100%;
   }
 }
 
