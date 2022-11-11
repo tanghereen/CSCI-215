@@ -1,0 +1,275 @@
+element {
+  box-sizing: border-box;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: darkolivegreen;
+}
+h1 {
+    background-color: darkslategrey;
+    padding: .5em;
+   font-family: "Menlo", "Meslo LG", monospace;
+    color: #FFFFFF;
+    text-align: center; 
+    width: 420px;
+    float: left;
+    text-shadow: 1px 1px 2px #FFFFFF; 
+}
+h2 {
+  background-color: darkslategrey;
+  text-align: center;
+  padding: 10px;
+  color: #FFFFFF;
+  font-family: "Menlo", "Meslo LG", monospace;
+}
+p { 
+    font-family: "Menlo", "Meslo LG", monospace;
+    height: 100%;
+   line-height: 1.725;
+    max-width: 1200px;
+   text-rendering: geometricPrecision;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    margin: 1rem auto;
+    text-align: center;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 1.25em;
+    word-spacing: 1em;
+    background-color: darkslategray;
+    color: #FEF0E6;
+    justify-content: center;
+    text-align: center;
+   font-family: "Menlo", "Meslo LG", monospace;
+
+}
+nav a {
+    text-decoration: none;
+    color: #FEF0E6;
+}
+header {
+    background-color: #000033; color:#FF9;
+    background-image: url('nebula-space-astro-photo-astronomy-sky-1420873.jpg');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
+}
+header p {
+  color: #FAF0E6;
+  margin: auto;
+  padding: 15px;
+  font-size: 2.3em;
+}
+#wrapper {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+    background-color: darkseagreen;
+}
+img {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    background-repeat: no-repeat;
+}
+footer a {
+  text-decoration: none;
+  color: linen;
+}
+footer p {
+  color: lightblue;
+}
+footer { 
+    display: flex;
+    color: lightblue;
+    justify-content: center;
+    font-size: 1em;
+    align-items: center;
+    height: 90px;
+    background-color: darkslategrey;
+    border-top: thin solid darkslategray;
+    padding-top: 20px;
+}
+ol {
+  color: lightblue;
+}
+ul {
+  color: lightblue;
+}
+dt {
+  font-weight: bold;
+  color:hsl(300, 85%, 24%)
+}
+dd {
+  color:hsl(300, 27%, 54%)
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+#homework {
+  background-color: darkslategray;
+  color: lightblue;
+  flex: 5;
+  min-width: 20em;
+  padding: 1.5em;
+  margin: 0.5em;
+}
+
+#milestones {
+ background-color: darkslategray;
+  color: lightblue;
+    flex: 5;
+  min-width: 15em;
+  padding: 1.5em;
+  margin: 0.5em;
+}
+li p {
+  text-align: left;
+}
+mark {
+  background-color: darkslategrey;
+  color: lightblue;
+}
+nav a:link {
+  color: #FEF0E6;
+ 
+}
+
+nav a:visited {
+  color: #FEF0E6;
+}
+
+nav a:hover {
+
+  color: darkseagreen;
+ 
+}
+
+nav li:hover {
+  border-bottom: 5px solid #FEF0E6;
+}
+
+a:link {
+  color: #FEF0E6;
+  
+}
+
+a:visited {
+  color: #FEF0E6;
+}
+
+a:hover {
+  color: darkseagreen;
+ 
+}
+
+li:hover {
+  border-bottom: 5px solid #FEF0E6;
+}
+nav ul {
+  list-style-type: none;
+  /* dont know why list-style-type doesn't work */
+  padding: 0;
+  margin: 0;
+  /*((((( or should it be auto )))))) */
+  text-align: center;
+}
+nav li {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25em;
+  word-spacing: 1em;
+  background-color: darkseagreen;
+  color: #FAF0E6;
+  justify-content: center;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  * {
+   min-width: auto;
+  }
+
+  body {
+    margin: 0 auto;
+  }
+
+  #wrapper {
+    width: 100%;
+  }
+
+  #content {
+    flex-direction: column;
+    /* font-size: 1.2em; */
+  }
+
+  header {
+    min-height: 100px;
+  }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-danger {
+    color: #FEF0E6;
+    background-color: darkseagreen;
+    border-color: darkslategrey;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-image: none;
+    border: 1px solid rgb(0 0 0 / 0%);
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: lightseagreen;
+    font-family: "Menlo", "Meslo LG", monospace;
+
+}
+[role=button] {
+    cursor: pointer;
+}

@@ -1,0 +1,175 @@
+body { 
+  background-color: pink;
+  color: #461212;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  line-height: 200%;
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left:  10px;
+  box-sizing: border-box;
+}
+h1 {
+    background-color: #442652;
+    padding: 1em;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: #FFFFFF;
+    text-align: center; 
+    width: 420px;
+    float: left;
+    text-shadow: 1px 1px 2px #000000; 
+}
+h2 { 
+    background-color: hsl(298, 44%, 46%); 
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 18pt;
+    color: #FFFFFF;
+    margin: 1em 0 0.5em;
+    border-bottom: 2px dashed #f070d4;
+    padding: 1em;
+    background-image: url(194c8316af9c6884e1c1569d325b874b.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+}
+ header {
+    background-color: #000033; color:#FF9;
+    background-image: url(Cougar-Lights-8_RSmith.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
+}
+ nav {
+    font-size: 1.25em;
+    word-spacing: 1em;
+    text-align: center;
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+    background-color: white;
+    color: #FFFFFF;
+    width: 490px;
+    float: right;
+    background-image: url(194c8316af9c6884e1c1569d325b874b.jpg);
+    background-repeat: no-repeat;
+}
+ nav a { 
+    text-decoration: none;
+}
+li a {
+  text-decoration: none;
+}
+p { 
+  text-align: center;
+  width: 90%;
+  max-width: 75ch;
+  margin: 2rem auto;
+  font-size: 14pt;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+li { 
+  font-size: 1em;
+  text-indent: 1em; 
+  width: 90%;
+  max-width: 75ch;
+  margin: 2rem auto;
+  line-height: 130%;
+}
+
+footer { 
+  color: #FFFFFF;
+  font-size: .75em;
+  font-style: italic; 
+  text-align: center;
+  padding: 5em;
+  background-color: #442652;
+  border-top: thin solid #d27cda;
+  padding-top: 10px;
+  clear: both;
+  padding-top: 2em;
+}
+   blockquote {
+    padding: 2rem;
+    background-color: #442652;
+    color: hsl(24, 100%, 85%);
+    width: 90%;
+    margin: 0 1rem 1rem 0;
+}
+  blockquote p {
+    font-size: 1.25rem;
+    margin: 0;
+    text-align: center;
+}
+  hr {	
+    border: 0.125rem solid hsl(300, 50%, 90%);
+    margin: 3rem 0;
+    clear: both;
+}
+  
+  #leftcol {
+    width: 440px;
+    float: left;
+    min-height: 450px;
+	  padding: 10px; 
+	  margin: 10px;
+}
+  #rightcol {
+    width: 440px;
+    float: right;
+    min-height: 450px;
+	  padding: 10px; 
+	  margin: 10px;
+}
+  img {
+    display: block;
+    margin: auto;
+}
+
+
+ol {
+    font-size: 14pt;
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+}
+ul {
+    font-size: 14pt;
+    text-indent: 3em; 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+}
+footer { 
+  background-color: #442652; 
+  color: hsl(24, 100%, 85%);
+  font-size: 1em;
+  font-style: italic;
+  text-align: center;
+  padding: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin: auto;
+}
+#wrapper {
+  background-color: #FAF0CD;
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  text-indent: 3em;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+hr {	
+  border: 0.125rem solid #480607;
+  margin: 3rem 0;
+}
+
+

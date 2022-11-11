@@ -1,0 +1,8 @@
+### ignore
+.idea/
+*.iml
+README.html
+
+/08 - Client-Server and PHP/WebAccountSetUp.html
+!/assignments/
+!/attendance/

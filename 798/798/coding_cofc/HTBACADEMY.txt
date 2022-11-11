@@ -1,0 +1,11 @@
+Path 
+	- Module_1
+		- Sections
+	- Module_2
+		- Sections
+	- Module_3
+		- Sections
+	- Module_4
+		- Section
+
+A Module is split into Sections and a Path contains many modules.

@@ -1,0 +1,154 @@
+body { 
+    background-color: #480607;
+    color: #461212;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+h1 {
+    background-color: #350506;
+    padding: 1em;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: hsl(24, 100%, 85%);
+    text-align: center; 
+    width: 300px;
+    float: left;
+    text-shadow: 1px 1px 2px #000000; 
+
+}
+h2 { 
+    background-color: rgb(124, 16, 16);
+    color: hsl(24, 100%, 85%);
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    text-align: center;
+    margin: 1em 0 0.5em;
+    border-bottom: 2px dashed #FAF0CD;
+    border-top: 2px dashed #FAF0CD;
+    padding: 1em;
+    
+}
+h3 {
+    background-color: rgb(136, 40, 40);
+    color: hsl(24, 100%, 85%);
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    text-align: center;
+    margin: 1em 0 0.5em;
+    border-bottom: 2px dashed #FAF0CD;
+    padding: 1em;
+    border-top: 2px dashed #FAF0CD;
+}
+header {
+    background-color: #480607; color:#FF9;
+    
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 2em;
+    text-shadow: 1px 1px 1px #FFF;
+    text-align: center;
+    display: block;
+}
+nav {
+    font-weight: bold;
+    word-spacing: 1em;
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+    color: rgb(136, 40, 40);
+    font-size: 1.25em;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    float: right;
+    width: 400px;
+    background-color: #FAF0CD;
+}
+nav a { 
+    text-decoration: none; 
+}
+p { 
+    width: 90%;
+    max-width: 75ch;
+    margin: 2rem auto;
+    font-size: 1.2em;
+    text-indent: 3em;
+    line-height: 130%;
+    text-align: center;
+}
+footer { 
+    background-color: #310505; 
+    color: hsl(24, 100%, 85%);
+    font-size: 1em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    padding-top: 10px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    border-top: thin solid #310505;
+    clear: both;
+    padding-bottom: 10px;
+    margin: auto;
+}
+#wrapper {
+    background-color: #FAF0CD;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+blockquote {
+    padding: 2em;
+    background-color: #480607;
+    color: hsl(24, 100%, 85%);
+    width: 94%;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+}
+hr {	
+    border: 0.125rem solid #480607;
+    margin: 3rem 0;
+    clear: both;
+}
+img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+figure {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    padding: 5px;
+    text-align: center;
+    width: 640px;
+    margin: auto;
+}
+figcaption {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    text-align: center;
+    width: 640px;
+    margin: auto;
+    font-weight: bold;
+}
+button {
+    color: #480607;
+    border: 1px solid #480607;
+    background-color: hsl(24, 100%, 85%);
+    font-style: serif;
+    width: 110px;
+    margin: auto;
+    padding: 6px;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+}
+button a {
+    text-decoration: none; 
+}
+#heropic {
+    background-image: url(download.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100px;
+}
