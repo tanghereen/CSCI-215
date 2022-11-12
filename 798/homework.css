@@ -35,6 +35,7 @@ p {
     margin: 1rem auto;
     text-align: center;
 }
+
 nav {
     display: flex;
     flex-direction: row;
@@ -52,6 +53,47 @@ nav a {
     text-decoration: none;
     color: #FEF0E6;
 }
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+}
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
 header {
     background-color: #000033; color:#FF9;
     background-image: url('nebula-space-astro-photo-astronomy-sky-1420873.jpg');
@@ -63,12 +105,6 @@ header {
     text-shadow: 1px 1px 1px #FFF;
     text-align: center;
     display: block;
-}
-header p {
-  color: #FAF0E6;
-  margin: auto;
-  padding: 15px;
-  font-size: 2.3em;
 }
 #wrapper {
     width: 80%;

@@ -6,62 +6,95 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width-device-width, initial-scale=1">
-<script>window.onload = () =>
-	//the function called when Calculate button is clicked.
-	{
-		/*calling a function calculateTip
-		which will calculate the tip for the bill.*/
-		document.querySelector('#calculate').onclick = calculateTip;
-	}
 
-function calculateTip() {
-	/*assign values of ID : amount, person and service to
-	variables for further calculations.*/
-	let amount = document.querySelector('#amount').value;
-	let service = document.querySelector('#services').value;
+<!-- javascript -->
 
-	console.log(service);
-	/*if statement will work when user presses
-		calculate without entering values. */
-	//so will display an alert box and return.
-	if (amount === '' && service === 'Select') {
-		alert("Please enter valid values");
-		return;
-	}
+<script>
+	// calculate the function
+	const handleCalculation = () => {
+		const inputBill = parseInt(document.getElementById('input-bill').value);
+		const inputTip = parseInt(document.getElementById('input-tip').value);
+		const inputPerson = parseInt(document.getElementById('input-person').value);
 
-	//now we are checking number of persons
-	
-	/*calculating the tip by multiplying total-bill and type of
-	service; then dividing it by number of persons.*/
-	//fixing the total amount upto 2 digits of decimal
-	let total = (amount * service);
-	total = total.toFixed(2);
+		if (validateInput(inputBill) && validateInput(inputTip) && validateInput(inputPerson)) {
+			warning.innerText = '';
+			const totalTip = (inputBill * inputTip) / 100;
+			const totalBill = totalTip + inputBill;
+			const perPersonBill = totalBill / inputPerson;
 
-	//finally displaying the tip value
-	document.querySelector('.tip').style.display = 'block';
-	document.querySelector('#total').innerHTML = total;
-}
-var total = parseFloat(document.getElementById("total").value);
-var tip = parseFloat(document.getElementById("percentage").value) * 0.01;
-  
-var totalTip = amount * tip;
-var totalBill = amount + totalTip;
+			document.getElementById('total-tip').innerText = totalTip.toFixed(2);
+			document.getElementById('per-person-bill').innerText = perPersonBill.toFixed(2);
+			document.getElementById('total-bill').innerText = totalBill.toFixed(2);
+		}
+		else {
+			warning.innerText = 'Please enter valid amount.';
+		}
+	};
 
-	</script>
+	// input validation
+	const validateInput = (input) => {
+		return (/^\d+$/).test(input);
+	};
+
+	// handle reset button
+	const handleReset = () => {
+		warning.innerText = '';
+		document.getElementById('input-bill').value = '';
+		document.getElementById('input-tip').value = '';
+		document.getElementById('input-person').value = '';
+		document.getElementById('total-tip').innerText = '0.00';
+		document.getElementById('per-person-bill').innerText = '0.00';
+		document.getElementById('total-bill').innerText = '0.00';
+	};
+</script>
+
+<!-- cascading style sheets -->
+
 <style>
+	/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+	* {
+		box-sizing: border-box;
+	}
 body {
-	background-color: lavender;
+	background-color: darkseagreen;
 	font-family: "Raleway", sans-serif;
 }
 
 p {
-	background-color: lavender;
+	background-color: darkslategray;
 	font-family: "Raleway", sans-serif;
+	color: #FFFFFF;
+	position: absolute;
+
 }
 
 .container {
 	width: 350px;
-	height: 500px;
+	height: 550px;
 	background-color: #fff;
 	position: absolute;
 	left: 50%;
@@ -71,29 +104,20 @@ p {
 }
 
 h1 {
-	position: absolute;
-	left: 50%;
-	top: -60px;
-	transform: translateX(-50%);
-	background-color: #ff851b;
+	background-color: darkslategray;
 	color: #fff;
 	font-weight: 100;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	font-size: 18px;
+	font-size: 20px;
 	text-align: center;
-	padding: 10px;
-}
-
-.wrapper {
-	padding: 30px;
+	padding: auto;
+	margin: auto;
+	
 }
 
 input,
 select {
 	border: none;
 	border-bottom: 1px solid #0074d9;
-	padding: 10px;
 }
 
 input:focus,
@@ -110,72 +134,85 @@ button {
 	margin: 20px auto;
 	width: 150px;
 	height: 50px;
-	background-color: green;
+	background-color: darkslategray;
 	color: #fff;
 	font-size: 16px;
 	border: none;
 	border-radius: 5px;
+	text-align: center;
+	justify-content: center;
+	
 }
 
-.tip {
-	text-align: center;
-	font-size: 18px;
-	display: none;
-}
  </style>
 
 <!-- bootstrap CSS -->
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- start HTML -->
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-<title>What's That Tip!</title>
+<title>What's That Tip?</title>
 </head>
     <body>
     <div class="container">
         <div class="wrapper">
         <div class="row">
             <div class="col">
-        <h2>Enter amount:</h2>
-        <input type="text" id="amount"
-				placeholder="Amount to be paid"> $
-        <br>
-        <p>Tell us your tip, and we'll calculate it in no time!</p>
-        <br>
+        <h1>Enter bill $</h1>
+		<br>
+		<br>
     </form>
 </div>
-            <div class="col">
-    <form>
-    <h2>Select tip:</h2>
-        <select id="services">
-				<option selected disabled hidden>
-					Select
-				</option>
-				<option value="0.25">25% - Top Notch</option>
-				<option value="0.20">20% - Excellent</option>
-				<option value="0.15">15% - Good</option>
-				<option value="0.10">10% - Bad</option>
-				<option value="0.05">5% - Worst</option>
-			</select>
-        <p>Enter tip, click "Calculate" to submit the form, and WE'LL DO THE REST!</p>
+    <div class="col">
+    	<form>
+    	<h1>Select tip %</h1>
+<br>
 <br>
     </form>
     </div>
          <div class="col">
-                <h2>Now, calculate!</h2>
-             <p>This will combine the two, performing a calculation and returning the result...</p>
-        <button id="calculate">Calculate</button>
-        <br>
-        <div class="tip">
-            <div id="total" class="txt"><label for="tot"></label></span>
-        <br>
-    <span id="total"></span>$
+                <h1>Split check #</h1>
+			 <br>
+			<br>
+
+		 </div>
+	<section>
+		<div class="row d-flex justify-content-between">
+			<div class="col-md-6 p-5 border">
+				<h3 class="text-center text-success">Tip Calculator</h3>
+				<hr>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Total Tip</th>
+							<th scope="col" id='total-tip'>0.00</th>
+						</tr>
+						<tr>
+							<th scope="col">Per Person Bill </th>
+							<th scope="col" id="per-person-bill">0.00</th>
+						</tr>
+						<tr>
+							<th scope="col">Total Bill</th>
+							<th scope="col" id='total-bill'>0.00</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-5 border p-5">
+				<h6>BILL $</h6>
+				<input type="text" id="input-bill" class='form-control m-2 w-50'>
+				<h6>TIP %</h6>
+				<input type="text" id="input-tip" class='form-control m-2 w-50'>
+				<h6>PERSON #</h6>
+				<input type="text" id="input-person" class='form-control m-2 w-50'>
+				<p class="text-danger" id='warning'></p>
+				<button onclick="handleCalculation()" class="btn btn-success m-2">Calculate</button>
+				<button onclick="handleReset()" class="btn btn-dark m-2">Reset</button>
+			</div>
+		</div>
+	</section>
         </div>
     </div>
 </div>

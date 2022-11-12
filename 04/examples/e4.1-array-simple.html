@@ -1,43 +1,43 @@
-<!DOCTYPE html>
+<html>
+
 <head>
-    <title>Welcome to CSCI-215!</title>
+    <title>Array Practice</title>
 </head>
+
 <body>
-<script type="text/Javascript">
+    <script type="text/Javascript">
 
-   
-// declaring arrays
-const myArray = [20,11,13];
-console.log(myArray);
+    
+    const myArray0 = [20,11,39];
+    const myArray1 = ["coffee grounds", "water", "sugar"];
+    const myArray2 = new Array(3.14, "water", true);
+    // access values/attributes of an array
+    const myArray = ["Lions", "Tigers", "Bears"];
+    document.write(`all values: ${myArray}<br>`);
+    document.write(`index 0: ${myArray[0]}<br>`);
+    document.write(`index 1: ${myArray[1]}<br>`);
+    document.write(`index 2: ${myArray[2]}<br>`);
+    document.write(`array length: ${myArray.length}<br>`);
+    
 
-const myArray1 = ["a", "b", "c"];
-console.log(myArray1);
+    // loop through or over array values and write to console
+    const coffeeStuffArray = ["coffee grounds", "water", "sugar"];
+    let coffeeIngredients = '';
+    for (let i=0; i < coffeeStuffArray.length; i++) {
+        console.log(`${i} = ${coffeeStuffArray[i]}`);
+        coffeeIngredients += `${i} = ${coffeeStuffArray[i]} <br/>`;
+        document.write(`${i} = ${coffeeStuffArray[i]}<br/>`);
+    }
+    document.getElementById('x').innerHTML = coffeeIngredients;
 
-const myArray2 = new Array(3.14, "water", true);
-console.log(myArray2);
 
-// access values/attributes
-const myArray3 = new Array("Lions", "Tigers", "Bears");
-document.write(`all values: ${myArray3}<br>`);
-document.write(`value index 0: ${myArray3[0]}<br>`);
-document.write(`value index 1: ${myArray3[1]}<br>`);
-document.write(`value index 2: ${myArray3[2]}<br>`);
-document.write(`value index 3: ${myArray3[3]}<br>`);
-document.write(`array length: ${myArray3.length}<br>`);
-
-for (let i=0; i < myArray3.length; i++) {
-    document.write(`value at index ${i} = ${myArray3[i]}<br>`);
-}
-
-let i = 0;
-while (i < myArray3.length) {
-    document.write(`value at index ${i} = ${myArray3[i]}<br>`);
-    i++;
-}
-
-// loop through or over array values and write to console
-
+    coffeeIngredients = '';
+    for (let x = coffeeStuffArray.length-1; x >= 0;  x--) {
+        coffeeIngredients += `${x} = ${coffeeStuffArray[x]} <br/>`;
+    }
+    document.getElementById('x').innerHTML = coffeeIngredients;
 
 </script>
 </body>
+
 </html>

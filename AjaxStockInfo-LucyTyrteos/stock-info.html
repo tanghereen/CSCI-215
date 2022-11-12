@@ -6,9 +6,6 @@
 <!-- Bootstrap import -->
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
 
 
 
@@ -20,29 +17,26 @@
     .selector-for-some-widget {
   box-sizing: content-box;
 }
+
 </style>
 </head>
-<body style="background-color:lightskyblue;">
-<div class="jumbotron text-center mb-3 mt-2">
+<body onload="init()" style="background-color: #FEF0E6;">
+    <body>
+    <div id="container">
+        <div class="row">
+            <div class="col-3">
 <h1>Stock Info</h1>
-</div>
+
 <p>GET YOUR STOCK INFO NOW!</p>
 
-<div id="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="mb-3">
-                <div class="border border-3 rounded bg-light">
-                    <div class="m-3">
-
-    <h2>Stock Symbols</h2>
+    <h2>Stocks</h2>
 
 <ul>
-<li class="cursor" onclick="getStockName('BTC')">BTC:</li>
-<li class="cursor" onclick="getStockName('ETH')">ETH:</li>
-<li class="cursor" onclick="getStockName('NKE')">NKE:</li>
-<li class="cursor" onclick="getStockName('TGT')">TGT:</li>
-<li class="cursor" onclick="getStockName('HD')">HD:</li>
+<li class="cursor" onclick="loadRemoteContent('BTC')">Bitcoin</li>
+<li class="cursor" onclick="loadRemoteContent('ETH')">Etherium</li>
+<li class="cursor" onclick="loadRemoteContent('NKE')">NIKE</li>
+<li class="cursor" onclick="loadRemoteContent('TGT')">Target</li>
+<li class="cursor" onclick="loadRemoteContent('HD')">Home Depot</li>
 </ul>
 
          </div>
@@ -51,31 +45,24 @@
     </div>
          </div>
             <div class="row">
-                <div class="col-md-6">
-                <div class="mb-3">
-        <div class="border border-3 rounded bg-light">
-                    <div class="m-3">
-                 <h2>Stock Names</h2>
-                <div id="stockName">
-                <ul>
-        <li class="cursor" onclick="getStockName()">BTC:</li>
-    </ul>
-    </div>
+                <div class="col-4">
+                 <h2>Last Price</h2>
+                <div id="additionalInfo"></div>
+            </div>
         </div>
     </div>
 <script type="text/javascript">
 
- const stockName = ["BTC", "ETH", "NKE", "TGT", "HD"];
- const ajaxRequest = new XMLHttpRequest();
-
-function getStockName(stockName) {
-    const ajaxRequest = new XMLHttpRequest();
-    ajaxRequest.onload = function() {
-        document.getElementById('stockName').innerHTML = this.responseText;
-     }
-     ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/AjaxStockInfo-LucyTyrteos/stock-info.php" + stockId);
-     ajaxRequest.send();
-}
+ function loadRemoteContent(id) {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.onload = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("additionalInfo").innerHTML = this.responseText;
+            }
+        }
+        ajaxRequest.open("GET", "https://tyrteoslm.stu.cofc.edu/AjaxStockInfo-LucyTyrteos/stock-info.php?id="+id);
+        ajaxRequest.send();
+    }
 
 </script>
 </body>

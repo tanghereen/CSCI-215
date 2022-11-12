@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 header('Content-Type: application/json');
 
 // array of product information
-$stockInfo = [
+$inventory = [
     [
         "id" => "BTC",
         "name" => "Bitcoin",
@@ -45,26 +45,19 @@ $stockInfo = [
 ];
 
 // build the result depending on whether or not an id to a product is provided
-$response = ' ';
-
+$result = '';
 if ($_GET['id']) {
     $id = $_GET['id'];
-    foreach ($stockInfo as $item) {
+    foreach ($inventory as $item) {
         if ($id === $item['id']) {
-            if ($_GET['name']) {
-                $response = $item['name'];
-            } else if  ($_GET['lastPrice']) {
-                $response = $item['lastPrice'];
-            } else if ($_GET['dollarChange']) {
-                $response = $item['dollarChange'];
-            } else if ($_GET['percentChange']) {
-                $response = $item['percentChange'];
-                break;
-            }
+            $result = $item['lastPrice'];
+            break;
         }
     }
 } else {
-    $response = 'Please provide an id.';
+    $result = 'Please provide an id.';
 }
-echo $response;
+
+echo $result;
+
 ?>
