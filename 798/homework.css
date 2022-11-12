@@ -94,6 +94,10 @@ nav a {
   and (orientation: landscape) { 
 
 }
+mark {
+  background-color: #FEF0E6;
+  color: darkslategray;
+}
 header {
     background-color: #000033; color:#FF9;
     background-image: url('nebula-space-astro-photo-astronomy-sky-1420873.jpg');
